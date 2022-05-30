@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zzq</groupId>
+    <artifactId>springboot-summary</artifactId>
+    <version>Final</version>
+    <modules>
+        <module>demo-flyway</module>
+        <module>demo-redis</module>
+        <module>demo-quartz</module>
+        <module>demo-rabbitmq</module>
+        <module>demo-security_jwt</module>
+        <module>demo-poi</module>
+        <module>demo-swagger</module>
+        <module>demo-limiter</module>
+        <module>demo-email</module>
+        <module>demo-http</module>
+        <module>demo-multithreading</module>
+        <module>demo-justauth</module>
+        <module>demo-google_authenticator</module>
+    </modules>
+    <name>backend</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <mybatis-starter.version>2.2.2</mybatis-starter.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <hutool.version>5.7.20</hutool.version>
+        <poi.version>3.9</poi.version>
+        <swagger.version>3.0.0</swagger.version>
+        <spring-doc.version>1.6.6</spring-doc.version>
+        <javax-mail.version>1.4.5</javax-mail.version>
+        <oshi.version>6.1.5</oshi.version>
+    </properties>
+
+    <!-- Spring Boot Parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.3</version>
+    </parent>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${spring-doc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-common</artifactId>
+                <version>${spring-doc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>${javax-mail.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

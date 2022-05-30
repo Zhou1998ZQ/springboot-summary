@@ -1,0 +1,17 @@
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    username:
+    password:
+    database: 0
+    client-type: lettuce
+    lettuce:
+      pool:
+        enabled: true
+        max-idle: 4
+        min-idle: 2
+        max-active: 8
+
+

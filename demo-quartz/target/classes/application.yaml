@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/springboot-summary
+    username: root
+    password: root
+    hikari:
+      pool-name: HikariCP
+      connection-timeout: 3000
+      connection-test-query: SELECT 1
+      maximum-pool-size: 64
+      minimum-idle: 4
+      idle-timeout: 180000
+      max-lifetime: 1800000
+
+  quartz:
+    job-store-type: jdbc
+    auto-startup: true
+    startup-delay: 2s
+    wait-for-jobs-to-complete-on-shutdown: true
+    overwrite-existing-jobs: true
+    jdbc:
+      initialize-schema: always
+
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: BC # backend cluster
+            instanceId: AUTO
+          jobStore:
+            useProperties: false
+            tablePrefix: QRTZ_
+            isClustered: true
+            clusterCheckinInterval: 10000
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 2
+            threadPriority: 5
+

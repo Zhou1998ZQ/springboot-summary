@@ -1,0 +1,20 @@
+server:
+  port: 80
+
+auth:
+ google:
+   client-id: 123456789
+   client-secret: 123456789
+   redirect-uri: http://i92x88.natappfree.cc/oauth/google/callback
+
+ github:
+   client-id: 123456789
+   client-secret: 123456789
+   redirect-uri: http://i92x88.natappfree.cc/oauth/github/callback
+
+ wechat:
+   client-id: 123456789
+   client-secret: 123456789
+   redirect-uri: http://i92x88.natappfree.cc/oauth/wechat/callback
+
+
