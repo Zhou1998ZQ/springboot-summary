@@ -1,8 +1,0 @@
-mail:
-  account:
-    host: smtp.163.com
-    port: 25
-    auth: true
-    from: zzq071798@163.com
-    user: zzq071798@163.com
-    pass:
