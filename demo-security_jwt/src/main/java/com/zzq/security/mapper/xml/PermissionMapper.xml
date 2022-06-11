@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzq.mapper.CentrisMapper">
+
+    <resultMap id="BaseResultMap" type="com.zzq.security.entity.Permission">
+        <id column="permission_id" property="permissionId" />
+        <result column="permission_name" property="permissionName" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        permission_id, permission_name
+    </sql>
+
+</mapper>

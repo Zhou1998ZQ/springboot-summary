@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/demo_security
+    username: root
+    password: root
+    hikari:
+      pool-name: HikariCP
+      connection-timeout: 3000
+      connection-test-query: SELECT 1
+      maximum-pool-size: 64
+      minimum-idle: 4
+      idle-timeout: 180000
+      max-lifetime: 1800000
+
+logging:
+  level:
+    com:
+      test:
+        dao: debug
+
+springdoc:
+  swagger-ui:
+    path: /swagger/index.html
+  api-docs:
+    path: /swagger/v3/api-docs
+

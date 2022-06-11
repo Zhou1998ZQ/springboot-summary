@@ -21,6 +21,7 @@
         <module>demo-multithreading</module>
         <module>demo-justauth</module>
         <module>demo-google_authenticator</module>
+        <module>demo-i18n</module>
     </modules>
     <name>backend</name>
     <packaging>pom</packaging>
