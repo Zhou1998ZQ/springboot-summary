@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    let socket;
+    function openSocket() {
+
+        const socketUrl = "ws://localhost:8080/api/pushMessage/" + $("#userId").val();
+        console.log(socketUrl);
+        if(socket!=null){
+            socket.close();
+            socket=null;
+        }
+        socket = new WebSocket(socketUrl);
+        socket.onopen = function() {
+            console.log("websocket opened");
+        };
+        socket.onmessage = function(msg) {
+            console.log(msg.data);
+        };
+        socket.onclose = function() {
+            console.log("websocket closed");
+        };
+        socket.onerror = function() {
+            console.log("websocket errored");
+        }
+    }
+
+    function sendMessage() {
+        socket.send('{"toUserId":"'+$("#toUserId").val()+'","contentText":"'+$("#contentText").val()+'"}');
+        console.log('{"toUserId":"'+$("#toUserId").val()+'","contentText":"'+$("#contentText").val()+'"}');
+    }
+</script>
+
+<body>
+
+<p>Socket Opener Id：<div><input id="userId" name="userId" type="text" value="10"></div>
+<p>toUserId and content：<div><input id="toUserId" name="toUserId" type="text" value="20">
+    <input id="contentText" name="contentText" type="text" value="hello websocket"></div>
+<p>click：<div><a onclick="openSocket()" style="color: red" >Open Socket</a></div>
+<p>click：<div><a onclick="sendMessage()" style="color: red" >Send message</a></div>
+</body>
+
+</html>

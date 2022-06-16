@@ -22,6 +22,7 @@
         <module>demo-justauth</module>
         <module>demo-google_authenticator</module>
         <module>demo-i18n</module>
+        <module>demo-websocket</module>
     </modules>
     <name>backend</name>
     <packaging>pom</packaging>
